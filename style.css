@@ -1,5 +1,350 @@
 body {
 	margin: 0;
 	font-family: Arial, sans-serif;
-	background-color: #f5f5f5;
+	background-color: #ffffe0;
+}
+
+header {
+	background-color: #6f4e37; /* 咖啡色 */
+	color: white;
+	padding: 10px;
+}
+h1 {
+	text-align: center;
+}
+
+.header-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.logo-group {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.header-top h2 {
+	margin: 0;
+	font-size: 1.6rem;
+}
+
+.header-logo {
+	border: none;
+	border-radius: 0.5rem;
+}
+
+.main-nav {
+	flex-shrink: 0;
+}
+
+.nav-list {
+	display: flex;
+	gap: 1rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nav-list a {
+	color: white;
+	text-decoration: none;
+	padding: 0.4rem 0.75rem;
+	border-radius: 0.5rem;
+	transition: background 0.2s ease;
+}
+
+.nav-list a:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+/* Modal (行動宣言視窗) */
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.6);
+	padding: 1.5rem;
+	z-index: 1000;
+}
+
+.modal-content {
+	position: relative;
+	background: #f0f9f8;
+	border-radius: 1rem;
+	max-width: 520px;
+	width: 100%;
+	padding: 2rem;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close {
+	position: absolute;
+	top: 0.65rem;
+	right: 0.75rem;
+	font-size: 1.8rem;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	color: #333;
+	line-height: 1;
+	padding: 0.1rem 0.4rem;
+}
+
+.modal-content h2 {
+	margin-top: 0;
+}
+
+.modal-content ul {
+	margin: 1rem 0 0 1.2rem;
+}
+
+.modal.show {
+	display: flex;
+}
+
+.grid-demo {
+	display: grid;
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.grid-2-columns {
+	grid-template-columns: 1fr 1fr;
+}
+
+.grid-3-columns {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.grid-item {
+    background: linear-gradient(135deg, #cbd64b 0%, #892a15 100%);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+	border: 2px solid rgba(0,0,0,0.2);
+}
+.code-block {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    margin-top: 15px;
+    border-left: 4px solid #667eea;
+    line-height: 1.5;
+}
+.hero {
+	display: flex;
+	align-items: center;
+    padding: 50px 50px;
+    background: linear-gradient(135deg, #e59a65 0%, #c87823 60%, #7f4e23 100%);
+    color: rgb(243, 246, 247);
+}
+
+.hero-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	gap: 30px;
+	align-items: center;
+}
+
+.hero-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hero-text h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.hero-text p {
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	margin: 0 auto;
+	padding: 0.9rem 1.6rem;
+	background: #ffdd1b;
+	color: #1a1a1a;
+	border-radius: 999px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+/* 關於我 - 兩欄佈局 */
+.about {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 3rem 1.5rem;
+	background: #fac677;
+}
+.about-container {
+	max-width: 600px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 0.8fr 1.1fr;
+	gap: 1rem;
+	align-items: start;
+}
+.about-left {
+	text-align: center;
+}
+.about-left img {
+	width: 100%;
+	max-width: 200px;
+	height: auto;
+	border-radius: 1rem;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.about-right h2 {
+	font-size: 2rem;
+	margin-bottom: 0.8rem;
+}
+.about-right p {
+	line-height: 1.7;
+	color: #333;
+}
+
+/* 作品集 - 卡片式設計 */
+.portfolio {
+	padding: 3rem 1.5rem;
+	background: #f7f3ee;
+}
+.portfolio h2 {
+	text-align: center;
+	font-size: 2.2rem;
+	margin-bottom: 0.5rem;
+}
+.portfolio-intro {
+	text-align: center;
+	margin-bottom: 1.6rem;
+	color: #555;
+}
+.portfolio-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 1.2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.portfolio-card {
+	background: white;
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 10px 25px rgba(50, 50, 93, 0.12);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+	display: flex;
+	flex-direction: column;
+}
+.portfolio-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 16px 35px rgba(49, 49, 93, 0.18);
+}
+.portfolio-image {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+}
+.card-content {
+	padding: 1rem 1rem 1.2rem;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.card-content h3 {
+	font-size: 1.1rem;
+	margin: 0 0 0.55rem;
+}
+.card-content p {
+	margin: 0 0 1rem;
+	color: #555;
+	font-size: 0.96rem;
+}
+.card-link {
+	display: inline-block;
+	margin-top: auto;
+	padding: 0.6rem 0.9rem;
+	background: #6f4e37;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 10px;
+	font-weight: 600;
+}
+.card-link:hover {
+	background: #5b3f2f;
+}
+
+.portfolio-intro {
+	max-width: 920px;
+	margin: 0 auto 1.6rem;
+	text-align: center;
+	color: #3c3c3c;
+}
+
+.contact {
+	padding: 2rem 1.5rem;
+	background: #fffdfa;
+	text-align: center;
+}
+
+.contact h2 {
+	font-size: 2rem;
+	margin-bottom: 0.8rem;
+}
+
+.contact p {
+	color: #555;
+	line-height: 1.6;
+	max-width: 820px;
+	margin: 0 auto;
+}
+
+footer {
+	background-color: #6f4e37;
+	color: white;
+	text-align: center;
+	padding: 15px 10px;
+	margin-top: 2rem;
+}
+
+/* 響應式調整 */
+@media (max-width: 980px) {
+	.about-container {
+		grid-template-columns: 1fr;
+	}
+	.header-top {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.hero {
+		padding: 40px 20px;
+	}
+	.portfolio-grid {
+		grid-template-columns: 1fr;
+	}
 }
